@@ -1,0 +1,24 @@
+/*- carbon footprint display box -*/
+.result--border {
+    border: 2px solid $main-blue;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    @include for-m-desktop-up {
+        margin: 0 7em;
+    }
+    @include for-big-desktop-up {
+        margin: 0 12em;
+    }
+    @include for-x-big-desktop-up {
+        margin: 0 18em;
+    }
+}
+
+.result--p {
+    @include for-x-tablet-portrait-up {
+        margin-left: 5px;
+    }
+}

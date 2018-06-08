@@ -1,0 +1,56 @@
+/*- trip input toggle box -*/
+.toggle-box {
+    padding: 5px 2px;
+    z-index: 100;
+    overflow: auto;
+    box-shadow: .6px .6px .6px 1px rgba(0, 0, 0, 0.14);
+    min-width: 30vw;
+    
+    @include for-tablet-portrait-up {
+        min-width: 28vw;
+    }
+    @include for-x-tablet-portrait-up {
+        padding: 20px 10px;
+        min-width: 25vw;
+    }
+    @include for-desktop-up {
+        min-width: 25vw;
+    }
+    @include for-m-desktop-up {
+        padding: 20px;
+        min-width: 23.6vw;
+    }
+    @include for-big-desktop-up {
+        min-width: 23.8vw;
+    }
+    @include for-x-big-desktop-up {
+        min-width: 24vw;
+    }
+}
+
+.toggle-box--li {
+    font-size: .7em;
+    
+    @include for-desktop-up {
+        font-size: 1.0em;
+    }
+    @include for-m-desktop-up {
+        font-size: .85em;
+    }
+}
+
+.toggle-box--error {
+    padding: 10px;
+    font-size: .8em;
+
+    @include for-desktop-up {
+        font-size: 1.0em;
+    }
+    @include for-m-desktop-up {
+        font-size: .85em;
+    }
+    @include for-x-tablet-portrait-up {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}

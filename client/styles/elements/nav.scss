@@ -1,0 +1,17 @@
+nav {
+    min-height: 50px;
+    padding: 4px 0;
+    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.42), 0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 100;
+}
+
+a.nav-brand {
+    padding-left: 20px;
+    padding-top: 5px;
+    float: left;
+}
+
+#logo {
+    height: 40px;
+}

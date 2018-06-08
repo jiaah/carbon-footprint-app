@@ -1,0 +1,86 @@
+/*- trip input -*/
+.input--form {
+
+    @include for-big-desktop-up {
+        padding: 0 3.5em;
+    }
+}
+
+.input--title {
+    padding-left: 1em;
+    padding-right: 1.2em;
+
+    @include for-tablet-portrait-up {
+        padding-right: 1.9em;
+    }
+    @include for-tablet-landscape-up {
+        padding-right: 2em;
+    }
+    @include for-desktop-up {
+        padding-right: 3.5em;
+    }
+}
+
+.trip--title-ul li {
+    width: calc(100%/3)
+}
+
+.trip--title-trip {
+
+    @include for-desktop-up {
+        padding-left: 1.2em;
+    }
+}
+
+.input--container-box {
+
+    @include for-tablet-portrait-up {
+        padding: .2em .6em;
+    }
+    @include for-x-tablet-portrait-up {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    @include for-desktop-up {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+}
+
+.input--label {
+
+    @include for-m-desktop-up {
+        padding-top: 0.85em;
+    }
+    @include for-big-desktop-up {
+        padding-top: 0.6em;
+    }
+}
+
+.input--text {
+    width: 25vw;
+    height: 25px;
+
+    @include for-big-desktop-up {
+        height: 35px;
+    }
+}
+
+.submit-reset--buttons {
+    @include for-desktop-up {
+        margin-right: 1em;
+    }
+}
+
+/*- border on inactive input -*/
+.inactive--input-border {
+    border-color: $xx-light-grey;
+}
+
+.inactive--input-border::placeholder {
+    color: $x-light-grey;
+}
+
+.inactive--input-border:hover {
+    border: 1px solid $xx-light-grey;
+}

@@ -1,0 +1,29 @@
+.header--wrapper {
+    width: 100%;
+    height: 260px;
+}
+
+.header--image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('./../assets/img/flightnook_630x318.jpg');
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-size: 100 auto;
+    
+    @include for-tablet-portrait-up {
+        background-image: url('./../assets/img/flightnook_1800px.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 150vw auto;
+        background-position-x: -2em;
+        font-weight: bold;
+    }
+    
+    @include for-x-big-desktop-up {
+        background-image: url('./../assets/img/flightnook_3200px.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 110vw auto;
+        background-position-x: -2em;
+        background-position-y: -10em;
+    }
+}

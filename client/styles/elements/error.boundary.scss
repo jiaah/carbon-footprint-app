@@ -1,0 +1,67 @@
+.error--container { 
+    
+    @include for-tablet-portrait-up {
+        margin-top: 3.5em;
+    }
+    @include for-m-desktop-up {
+        display: flex;
+        margin: 6.5em 0;
+    }
+}
+
+.error--image {
+    width: 100vw;
+    height: auto;  
+
+    @include for-tablet-portrait-up {
+        height: 600px;
+    }
+    @include for-m-desktop-up {
+        width: 50vw;
+        margin-left: 3em;
+    }
+}
+
+.error--p {
+    margin: 3em 0;
+    
+    @include for-x-tablet-portrait-up {
+        margin: 2em 0;
+    }
+    @include for-tablet-portrait-up {
+        letter-spacing: 1px;
+    }
+    @include for-m-desktop-up {
+        padding: 6em 0;
+        width: 100%;
+        margin: auto;
+    }
+    @include for-big-desktop-up {
+        padding-right: 6em;
+    }
+    @include for-big-desktop-up {
+        padding-right: 9em;
+    }
+}
+
+.error--p-1 {
+
+    @include for-x-tablet-portrait-up {
+        font-size: 2em;
+    }
+    @include for-big-desktop-up {
+        font-size: 2.3em;
+    }
+    @include for-x-big-desktop-up {
+        font-size: 2.5em;
+    }
+}
+
+.error--p-2 {
+
+    @include for-m-desktop-up {
+        padding-left: 1em;
+        padding-right: 1em;
+        line-height: 1.3em;
+    }
+}
