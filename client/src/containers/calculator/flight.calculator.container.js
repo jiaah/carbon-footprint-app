@@ -97,7 +97,7 @@ class FlightCalculator extends Component {
       inputValue,
     } = this.props;
 
-    // result == array of selected search values
+    // result is 'array of search result value's ids'
     if (!result || result.length === 0) {
       const inputs = selectedFlight === 'direct' ? inputNum :
         inputNum.filter(id => id !== inputNum[inputNum.length - 1]);
@@ -119,7 +119,7 @@ class FlightCalculator extends Component {
       });
 
       // check last active input row
-      // if ( last disabled input === Trip 2 ) Inputs must be filled out
+      // if ( last active input === Trip 2 ) Inputs must be filled out
       if ((selectedFlight === 'indirect') && (lastActiveInput === 2)) {
         this.handleError(lastActiveInput);
       } else if (lastActiveInput > 2) {
@@ -139,7 +139,6 @@ class FlightCalculator extends Component {
 
   fetchFlightsFootPrint = (validPassengerNum) => {
     const {
-      onFetchFlights,
       inputError,
       selectedTrip,
       searchResultValue,
@@ -155,8 +154,6 @@ class FlightCalculator extends Component {
         searchResultValue,
       );
     }
-
-    // onFetchFlights('YUL', 'JFK'); // currently just defaulting the origin and destination
   }
 
   submit = async (ev) => {

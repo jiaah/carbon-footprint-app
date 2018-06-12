@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
 
 /* -- Import Components -- */
 import Hr from '../../components/hr';
 import Ul from '../../components/ul';
-
 import InputForm from '../../components/form/input.form';
 
 /* --- Actions --- */
@@ -13,7 +11,6 @@ import { toggleBox, onFocusInput } from '../../actions/input.assist';
 import { fetchAirportsList } from '../../actions/airportList';
 import { addInputValue, saveSearchResultValue, removeSearchResultValue } from '../../actions/input';
 import { saveSuggestions } from '../../actions/suggestion';
-
 
 class TripPathInputForm extends Component {
   constructor() {

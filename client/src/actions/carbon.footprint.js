@@ -9,13 +9,13 @@ export const getCarbonFootprint = (
   dispatch({
     type: actionTypes.FETCH_CARBON_FOOTPRINT_REQUEST,
   });
-  // fetch()
+  // axios.post('/api/flightaware', { selectedTrip, validPassengerNum, passengerClass, searchResultValue })
   // .then(suggestion => {
 
-  dispatch({
-    type: actionTypes.FETCH_CARBON_FOOTPRINT_SUCCESS,
-    payload: 452.87,
-  });
+    dispatch({
+      type: actionTypes.FETCH_CARBON_FOOTPRINT_SUCCESS,
+      payload: 452.87,
+    });
   // })
   // .catch( error => {
 

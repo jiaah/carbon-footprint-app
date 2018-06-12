@@ -38,7 +38,6 @@ const InputToggleBox = ({
             !suggestions || suggestions.length === 0 ? errorMessage :
               suggestions.map((place, index) => {
                 const regex = new RegExp(inputValue, 'gi');
-                /** BUG regex && span * */
                 const cityName = place.city.replace(RegExp, `<span style={{color: red}}>${inputValue}</span>`);
                 const stateName = place.state.replace(RegExp, `<span className="b">${inputValue}</span>`);
                 const countryName = place.country.replace(RegExp, `<span className="b">${inputValue}</span>`);
