@@ -1,32 +1,30 @@
 .headings {
     display: block;
     color: $white;
-    font-size: 2.4em;
+    font-size: 2em;
     padding: 60px 20px;
     text-align: left;
-
     @include for-tablet-portrait-up {
         padding: 0 10px;
         text-align: center;
         display: flex;
         padding: 140px 20px 170PX 20PX;
     }
+    @include for-big-desktop-up {
+        font-size: 2.4em;
+     }
 }
-
 .headings h1:first-child,
 .headings h1:nth-child(2), {
     margin-right: 15px;
 }
-
 h2 {
     border: none;
     color: $black;
     background-color: transparent;
     width: 90vw;
-    font-size: 2em;
+    font-size: 1.7em;
     color: $main-blue;
-    
-
     @include for-tablet-portrait-up {
         width: 55vw;
         border: 1px solid $main-blue;
@@ -36,10 +34,7 @@ h2 {
         background-color: $main-blue;
         color: $white;
     }
-    @include for-x-tablet-portrait-up {
-       font-size: 2.3em;
-    }
-    @include for-desktop-up {
-        font-size: 2.5em;
+    @include for-big-desktop-up {
+       font-size: 1.9em;
     }
 }

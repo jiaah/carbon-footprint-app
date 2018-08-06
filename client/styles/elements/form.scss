@@ -2,7 +2,6 @@
 .container-raised--form {
     padding-top: 2.5em;
     padding-bottom: .8em;
-
     @include for-tablet-portrait-up {
         border: 1px solid $main-blue;
         border-radius: 5px;
@@ -24,13 +23,6 @@
 
 form {
     padding-bottom: 3em;
-
-    // @include for-x-tablet-portrait-up {
-    //     font-size: 1.2em;
-    // }
-    // @include for-desktop-up {
-    //     font-size: 1.0em;
-    // }
     @include for-m-desktop-up {
         font-size: 1.2em;
     }

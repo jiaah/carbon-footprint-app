@@ -17,7 +17,7 @@ const Footer = ({ link }) => (
     <Hr />
     <div className="tc footer--sec-section">
       <div className="footer--sec-section--flightnook">
-        <a href="https://www.flightnook.com" rel="noopener noreferrer" target="_blank" className="white td-none lh-3">{link}</a>
+        <a href="/" rel="noopener noreferrer" target="_blank" className="white td-none lh-3">{link}</a>
       </div>
       <div className="lh-3 flex justify-center">
         <UI

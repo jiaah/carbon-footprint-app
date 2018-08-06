@@ -21,7 +21,7 @@ const HomeContainer = ({ resultLoading }) => {
         <FlightCalculatorContainer />
       </ErrorBoundary>
       <Footer
-        link="© 2017 Flightnook- all rights reserved"
+        link="© 2017 - all rights reserved"
       />
     </div>
   );

@@ -634,7 +634,7 @@ body {
 .headings {
   display: block;
   color: #fff;
-  font-size: 2.4em;
+  font-size: 2em;
   padding: 60px 20px;
   text-align: left; }
   @media (min-width: 600px) {
@@ -643,6 +643,9 @@ body {
       text-align: center;
       display: flex;
       padding: 140px 20px 170PX 20PX; } }
+  @media (min-width: 1480px) {
+    .headings {
+      font-size: 2.4em; } }
 
 .headings h1:first-child,
 .headings h1:nth-child(2) {
@@ -653,7 +656,7 @@ h2 {
   color: #3c4858;
   background-color: transparent;
   width: 90vw;
-  font-size: 2em;
+  font-size: 1.7em;
   color: #4da5ff; }
   @media (min-width: 600px) {
     h2 {
@@ -664,12 +667,9 @@ h2 {
       margin-bottom: -5px;
       background-color: #4da5ff;
       color: #fff; } }
-  @media (min-width: 750px) {
+  @media (min-width: 1480px) {
     h2 {
-      font-size: 2.3em; } }
-  @media (min-width: 1000px) {
-    h2 {
-      font-size: 2.5em; } }
+      font-size: 1.9em; } }
 
 @media (min-width: 600px) {
   .container-raised {
@@ -741,29 +741,43 @@ form {
       font-size: 1.4em; } }
 
 /*-- all buttons --*/
-@media (min-width: 1000px) {
-  .form--buttons {
-    flex-direction: row;
-    justify-content: center;
-    margin-right: 0; } }
+.form--buttons {
+  font-size: 16px; }
+  @media (min-width: 1000px) {
+    .form--buttons {
+      flex-direction: row;
+      justify-content: space-around;
+      margin-right: 0; } }
+  @media (min-width: 1480px) {
+    .form--buttons {
+      font-size: 20px;
+      padding-left: 5em;
+      padding-right: 5em; } }
+  @media (min-width: 1800px) {
+    .form--buttons {
+      padding-left: 6em;
+      padding-right: 6em; } }
 
 @media (min-width: 1000px) {
   .form--button {
     margin-left: 1em;
-    margin-right: 1em;
-    font-size: 1em; } }
+    margin-right: 1em; } }
 
 @media (min-width: 1200px) {
   .form--button {
     margin-left: 1.5em;
-    margin-right: 1.5em;
-    font-size: 1em; } }
+    margin-right: 1.5em; } }
 
 @media (min-width: 1480px) {
   .form--button {
     margin-left: 2em;
-    margin-right: 2em;
-    font-size: 1em; } }
+    margin-right: 2em; } }
+
+.form--button label {
+  font-size: 16px; }
+  @media (min-width: 1480px) {
+    .form--button label {
+      font-size: 18px; } }
 
 /*-- toggle buttons --*/
 @media (min-width: 1000px) {
@@ -809,14 +823,20 @@ form {
       font-size: 1.1em; } }
 
 /*-- submit.reset --*/
-@media (min-width: 1480px) {
-  .submit-reset--btns {
-    padding: 0 5.5em; } }
+.submit-reset--btns {
+  font-size: 16px; }
+  @media (min-width: 1480px) {
+    .submit-reset--btns {
+      padding: 0 5.5em;
+      font-size: 18px; } }
 
 /*- trip input -*/
-@media (min-width: 1480px) {
-  .input--form {
-    padding: 0 3.5em; } }
+.input--form {
+  font-size: 16px; }
+  @media (min-width: 1480px) {
+    .input--form {
+      padding: 0 3.5em;
+      font-size: 18px; } }
 
 .input--title {
   padding-left: 1em;
@@ -934,6 +954,7 @@ form {
 
 /*- carbon footprint display box -*/
 .result--border {
+  font-size: 1.1em;
   border: 2px solid #4da5ff;
   border-radius: 5px;
   display: flex;
@@ -941,24 +962,22 @@ form {
   flex-wrap: wrap; }
   @media (min-width: 1200px) {
     .result--border {
-      margin: 0 7em; } }
+      font-size: 1.3em; } }
   @media (min-width: 1480px) {
     .result--border {
-      margin: 0 12em; } }
-  @media (min-width: 1800px) {
-    .result--border {
-      margin: 0 18em; } }
+      margin: 0 12em;
+      font-size: 1.5em; } }
 
 @media (min-width: 750px) {
   .result--p {
     margin-left: 5px; } }
 
 footer {
-  font-size: 1.1em;
+  font-size: .9em;
   padding: 2em 1em 1em 1em; }
   @media (min-width: 900px) {
     footer {
-      font-size: 1.2em;
+      font-size: 1.1em;
       padding-left: 2em;
       padding-right: 2em; } }
 

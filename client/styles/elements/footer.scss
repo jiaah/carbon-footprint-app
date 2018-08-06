@@ -1,9 +1,9 @@
 footer {
-    font-size: 1.1em;
+    font-size: .9em;
     padding: 2em 1em 1em 1em;
 
     @include for-tablet-landscape-up {
-        font-size: 1.2em;
+        font-size: 1.1em;
         padding-left: 2em;
         padding-right: 2em;
     }

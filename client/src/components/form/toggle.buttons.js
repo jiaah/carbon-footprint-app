@@ -16,7 +16,7 @@ const ToggleButtons = ({
   const indirectBtnActive = selectedFlight === 'indirect' ? 'btn--active' : '';
 
   return (
-    <div className="flex justify-around pb2">
+    <div className="flex justify-around pb2 flex-auto">
       <div className="form--button">
         <label>{label1}</label>
         <div className="flex pt2">

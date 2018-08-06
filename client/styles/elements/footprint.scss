@@ -1,19 +1,17 @@
 /*- carbon footprint display box -*/
 .result--border {
+    font-size: 1.1em;
     border: 2px solid $main-blue;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    
     @include for-m-desktop-up {
-        margin: 0 7em;
+        font-size: 1.3em;
     }
     @include for-big-desktop-up {
         margin: 0 12em;
-    }
-    @include for-x-big-desktop-up {
-        margin: 0 18em;
+        font-size: 1.5em;
     }
 }
 

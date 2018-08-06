@@ -211,7 +211,7 @@ class FlightCalculator extends Component {
                     handleToggleTripButtonClick={this.handleToggleTripButtonClick}
                     handleToggleFlightButtonClick={this.handleToggleFlightButtonClick}
                   />
-                  <div className="flex justify-around pt3 form--buttons-passenger">
+                  <div className="flex justify-around flex-auto pt3 form--buttons-passenger">
                     <NumberUpdownForm
                       label="Passenger Number"
                       stateName="passengerNumber"
