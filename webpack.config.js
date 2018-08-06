@@ -6,10 +6,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = (env) => {
   const isProduction = env === 'production';
   const CSSExtract = new ExtractTextPlugin('style.css');
+  const API = isProduction ? 'https://carbon-footprint.herokuapp.com' : 'http://localhost:3000';
 
   return {
     entry: [
-      'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr&reload=true',
+      `webpack-hot-middleware/client?path=${API}/__webpack_hmr&reload=true`,
       path.join(__dirname, '/client/index.js'),
     ],
     output: {
@@ -36,10 +37,10 @@ module.exports = (env) => {
     devtool: isProduction ? 'source-map' : 'inline-source-map',
     resolve: {
       modules: ['./node_modules'],
-      alias: {
-        src: path.resolve(__dirname, '..', 'client/src'),
-        assets: path.resolve(__dirname, '..', 'public/assets'),
-      },
+      // alias: {
+      //   src: path.resolve(__dirname, '..', 'client/src'),
+      //   assets: path.resolve(__dirname, '..', 'public/assets'),
+      // },
       extensions: ['.js', '.jsx', '.json', '*'],
     },
     module: {
