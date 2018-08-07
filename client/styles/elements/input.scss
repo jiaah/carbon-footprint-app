@@ -10,7 +10,6 @@
 .input--title {
     padding-left: 1em;
     padding-right: 1.2em;
-
     @include for-tablet-portrait-up {
         padding-right: 1.9em;
     }
@@ -27,14 +26,12 @@
 }
 
 .trip--title-trip {
-
     @include for-desktop-up {
         padding-left: 1.2em;
     }
 }
 
 .input--container-box {
-
     @include for-tablet-portrait-up {
         padding: .2em .6em;
     }
@@ -49,7 +46,6 @@
 }
 
 .input--label {
-
     @include for-m-desktop-up {
         padding-top: 0.85em;
     }
@@ -61,9 +57,9 @@
 .input--text {
     width: 25vw;
     height: 25px;
-
     @include for-big-desktop-up {
         height: 35px;
+        font-size: 16.5px;
     }
 }
 

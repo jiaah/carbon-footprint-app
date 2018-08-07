@@ -2,7 +2,6 @@ input {
   padding: 5px 10px;
   border-radius: 5px;
   border: none;
-  // margin: 5px;
 }
 
 .input--medium {
@@ -19,13 +18,11 @@ input {
 
 /*- input-placeholder -*/
 .input::placeholder {
-    padding: 5px 0;
     color: $x-light-grey;
     opacity: 1;
     word-spacing: .5px;
     letter-spacing: .5px;
     text-indent: 3px;
-    font-size: 1.2em;
     font-weight: 300;
   }
 

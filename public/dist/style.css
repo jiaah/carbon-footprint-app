@@ -450,13 +450,11 @@ input {
 
 /*- input-placeholder -*/
 .input::placeholder {
-  padding: 5px 0;
   color: #c2c2c2;
   opacity: 1;
   word-spacing: .5px;
   letter-spacing: .5px;
   text-indent: 3px;
-  font-size: 1.2em;
   font-weight: 300; }
 
 .input:focus::placeholder {
@@ -885,7 +883,8 @@ form {
   height: 25px; }
   @media (min-width: 1480px) {
     .input--text {
-      height: 35px; } }
+      height: 35px;
+      font-size: 16.5px; } }
 
 @media (min-width: 1000px) {
   .submit-reset--buttons {
