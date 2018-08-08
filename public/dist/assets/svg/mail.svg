@@ -5,8 +5,7 @@
   <g fill="none" fill-rule="evenodd">
     <path fill="#FFF" d="M36 14L23 24h-2L9 14v-2l1-1h25l1 1v2zm0 3v14l-2 2H11l-2-2V17l11 8c1 2 4 2 5 0l11-8z"/>
     <g style="mix-blend-mode:overlay">
-      <use fill="#323437" style="mix-blend-mode:difference" xlink:href="#a"/>
-      <path stroke="#323437" stroke-width="2" d="M22 43a21 21 0 0 0 21-21 21 21 0 1 0-21 21z"/>
+      <path stroke-width="2" d="M22 43a21 21 0 0 0 21-21 21 21 0 1 0-21 21z"/>
     </g>
   </g>
 </svg>

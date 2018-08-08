@@ -3,10 +3,6 @@
     <circle id="a" cx="22" cy="22" r="22"/>
   </defs>
   <g fill="none" fill-rule="evenodd">
-    <path fill="#FFF" fill-rule="nonzero" stroke="#FFF" d="M11 18l1-1h21l1 1v15l-1 1H12l-1-1V18zm6-4v6l-3-3h17l-3 2v-5c0-1-1-3-3-3h-5c-2 0-3 2-3 3zm-3 0c0-3 3-5 6-5h5c3 0 6 2 6 5v6H14v-6zm10 13l1-2-2-2c-2 0-3 1-3 2l1 2v2h3v-2z" style="mix-blend-mode:overlay"/>
-    <g style="mix-blend-mode:overlay">
-      <use fill="#323437" style="mix-blend-mode:difference" xlink:href="#a"/>
-      <circle cx="22" cy="22" r="21" stroke="#323437" stroke-width="2"/>
-    </g>
+    <path fill="#FFF" fill-rule="nonzero" stroke="#FFF" d="M11 18l1-1h21l1 1v15l-1 1H12l-1-1V18zm6-4v6l-3-3h17l-3 2v-5c0-1-1-3-3-3h-5c-2 0-3 2-3 3zm-3 0c0-3 3-5 6-5h5c3 0 6 2 6 5v6H14v-6zm10 13l1-2-2-2c-2 0-3 1-3 2l1 2v2h3v-2z"/>
   </g>
 </svg>
