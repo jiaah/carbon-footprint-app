@@ -33,8 +33,7 @@ module.exports = (env) => {
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoEmitOnErrorsPlugin(),
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-        'process.env.DEBUG': JSON.stringify(process.env.DEBUG)
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
       }),
       new UglifyJsPlugin({
         uglifyOptions:{
