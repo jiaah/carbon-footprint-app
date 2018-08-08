@@ -604,8 +604,10 @@ body {
   letter-spacing: 1px; }
 
 .header--wrapper {
-  width: 100%;
-  height: 260px; }
+  width: 100%; }
+  @media (min-width: 600px) {
+    .header--wrapper {
+      height: 260px; } }
 
 .header--image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/assets/img/flightnook_630x318.jpg);
