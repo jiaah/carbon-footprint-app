@@ -2,10 +2,12 @@ const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = (env) => {
   const isProduction = env === 'production';
   const CSSExtract = new ExtractTextPlugin('style.css');
+  
   const API = isProduction ? 'https://carbon-footprint.herokuapp.com' : 'http://localhost:3000';
 
   return {
@@ -30,17 +32,14 @@ module.exports = (env) => {
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoEmitOnErrorsPlugin(),
       new webpack.DefinePlugin({
-        'process.env': { NODE_ENV: JSON.stringify('development') },
+        'process.env': { NODE_ENV: JSON.stringify('production') },
       }),
+      new webpack.optimize.UglifyJsPlugin(),
     ],
     context: __dirname,
     devtool: isProduction ? 'source-map' : 'inline-source-map',
     resolve: {
       modules: ['./node_modules'],
-      // alias: {
-      //   src: path.resolve(__dirname, '..', 'client/src'),
-      //   assets: path.resolve(__dirname, '..', 'public/assets'),
-      // },
       extensions: ['.js', '.jsx', '.json', '*'],
     },
     module: {
@@ -53,13 +52,15 @@ module.exports = (env) => {
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: true,
+                  sourceMap: isProduction ? false : true,
+                  minimize: isProduction ? true : false,
                 },
               },
               {
                 loader: 'sass-loader',
                 options: {
-                  sourceMap: true,
+                  sourceMap: isProduction ? false : true,
+                  minimize: isProduction ? true : false,
                 },
               },
             ],

@@ -78,6 +78,7 @@
     "webpack-hot-middleware": "^2.19.1"
   },
   "devDependencies": {
+    "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack-dev-server": "^2.11.2"
   }
 }
