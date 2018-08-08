@@ -10,7 +10,7 @@
         display: flex;
         padding: 140px 20px 170PX 20PX;
     }
-    @include for-big-desktop-up {
+    @include for-desktop-up {
         font-size: 2.4em;
      }
 }
