@@ -64,32 +64,21 @@
 }
 
 .form--select-updown--input::placeholder {
-    padding: 5px 10px;
     color: $grey;
     opacity: 1;
     word-spacing: 1px;
     letter-spacing: 1px;
     text-indent: 10px;
-    font-size: 1.2em;
     font-weight: 300;
 }
 
 /*-- redux-form dropdown --*/ 
 .form--select-dropdown {
-    padding: 7px 10px;
+    height: 30px;
     border-radius: 5px;
     margin-top: .4em;
     color: $grey; 
-    font-size: 1.3em;
     background-color: $white;
-
-    @include for-tablet-portrait-up {
-        font-size: 1.2em;
-    }
-    @include for-big-desktop-up {
-        margin-top: .41em;
-        font-size: 1.1em;
-    }
 }
 
 /*-- submit.reset --*/ 

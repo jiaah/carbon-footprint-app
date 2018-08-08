@@ -797,30 +797,20 @@ form {
   margin-top: 5px; }
 
 .form--select-updown--input::placeholder {
-  padding: 5px 10px;
   color: #777;
   opacity: 1;
   word-spacing: 1px;
   letter-spacing: 1px;
   text-indent: 10px;
-  font-size: 1.2em;
   font-weight: 300; }
 
 /*-- redux-form dropdown --*/
 .form--select-dropdown {
-  padding: 7px 10px;
+  height: 30px;
   border-radius: 5px;
   margin-top: .4em;
   color: #777;
-  font-size: 1.3em;
   background-color: #fff; }
-  @media (min-width: 600px) {
-    .form--select-dropdown {
-      font-size: 1.2em; } }
-  @media (min-width: 1480px) {
-    .form--select-dropdown {
-      margin-top: .41em;
-      font-size: 1.1em; } }
 
 /*-- submit.reset --*/
 .submit-reset--btns {
