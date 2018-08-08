@@ -2,7 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = (env) => {
   const isProduction = env === 'production';
@@ -32,10 +33,12 @@ module.exports = (env) => {
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoEmitOnErrorsPlugin(),
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify('production'),
+        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+        'process.env.DEBUG': JSON.stringify(process.env.DEBUG)
       }),
       new UglifyJsPlugin({
         uglifyOptions:{
+          sourceMap: true,
           output: {
             comments: false, // remove comments
           },
@@ -52,6 +55,7 @@ module.exports = (env) => {
           }
         },
       }),
+      new CompressionPlugin()
     ],
     context: __dirname,
     devtool: isProduction ? 'source-map' : 'inline-source-map',
@@ -69,15 +73,15 @@ module.exports = (env) => {
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: isProduction ? false : true,
-                  minimize: isProduction ? true : false,
+                  sourceMap: true,
+                  minimize: true
                 },
               },
               {
                 loader: 'sass-loader',
                 options: {
-                  sourceMap: isProduction ? false : true,
-                  minimize: isProduction ? true : false,
+                  sourceMap: true,
+                  minimize: true
                 },
               },
             ],
