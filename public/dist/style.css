@@ -491,8 +491,12 @@ button {
   border-radius: 5px;
   border: none;
   margin: 5px;
+<<<<<<< HEAD
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.0001); }
+=======
+  cursor: pointer; }
+>>>>>>> parent of 745cef5... fix buttons overrided grey background color on Safari
 
 .button--large {
   font-size: 2em; }
@@ -828,11 +832,11 @@ form {
       font-size: 18px; } }
 
 .submit {
-  background-color: rgba(231, 209, 8, 0.5);
-  border: 1px solid rgba(231, 209, 8, 0.2); }
+  background-color: rgba(42, 140, 3, 0.4);
+  border: 1px solid rgba(42, 140, 3, 0.2); }
 
 .reset {
-  border: 1px solid #e6cf03; }
+  border: 1px solid rgba(42, 140, 3, 0.8); }
 
 /*- trip input -*/
 .input--form {
