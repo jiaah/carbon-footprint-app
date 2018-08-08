@@ -389,14 +389,14 @@ body {
   background-color: #fcfcfc; }
 
 .bg-lightblue {
-  background-color: #e7eefa; }
+  background-color: #f5dc6d5d; }
 
 /* ------ FONT COLOR ------ */
 .white {
   color: #fff; }
 
 .light-blue {
-  color: #a6cef7; }
+  color: #f5dc6dac; }
 
 .main-blue {
   color: #4da5ff; }
@@ -825,6 +825,13 @@ form {
     .submit-reset--btns {
       padding-right: 32px;
       font-size: 18px; } }
+
+.submit {
+  background-color: rgba(42, 140, 3, 0.4);
+  border: 1px solid rgba(42, 140, 3, 0.2); }
+
+.reset {
+  border: 1px solid rgba(42, 140, 3, 0.8); }
 
 /*- trip input -*/
 .input--form {
