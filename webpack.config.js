@@ -54,7 +54,7 @@ module.exports = (env) => {
           // }
         },
       }),
-      new CompressionPlugin()
+      // new CompressionPlugin()
     ],
     context: __dirname,
     devtool: isProduction ? 'source-map' : 'inline-source-map',
