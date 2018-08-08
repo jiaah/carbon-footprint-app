@@ -13,7 +13,7 @@ module.exports = (env) => {
 
   return {
     entry: [
-      `webpack-hot-middleware/client?path=${API}/__webpack_hmr&reload=true`,
+      // `webpack-hot-middleware/client?path=${API}/__webpack_hmr&reload=true`,
       path.join(__dirname, '/client/index.js'),
     ],
     output: {
