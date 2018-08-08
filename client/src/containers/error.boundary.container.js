@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LazyLoad from 'react-lazyload';
+// import LazyLoad from 'react-lazyload';
 
 /* -- Import Images -- */
 import ErrorImg from '../../assets/svg/monkey.svg';
@@ -25,9 +25,9 @@ class ErrorBoundary extends Component {
       if (this.state.hasError) {
         return (
           <div className="error--container">
-            <LazyLoad height={200} offset={100} once>
+            {/* <LazyLoad height={200} offset={100} once> */}
               <img src={ErrorImg} alt="404" className="error--image" />
-            </LazyLoad>
+            {/* </LazyLoad> */}
             <div className="tc f-regular lh-1 error--p">
               <div className="f-xl lh-1 error--p-1">
                 <p className="main-blue">Oops !</p>

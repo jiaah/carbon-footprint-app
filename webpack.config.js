@@ -2,18 +2,19 @@ const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const CompressionPlugin = require("compression-webpack-plugin");
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = (env) => {
   const isProduction = env === 'production';
+  console.log('env: ', env);
   const CSSExtract = new ExtractTextPlugin('style.css');
   
   const API = isProduction ? 'https://carbon-footprint.herokuapp.com' : 'http://localhost:3000';
 
   return {
     entry: [
-      // `webpack-hot-middleware/client?path=${API}/__webpack_hmr&reload=true`,
+      `webpack-hot-middleware/client?path=${API}/__webpack_hmr&reload=true`,
       path.join(__dirname, '/client/index.js'),
     ],
     output: {
@@ -33,27 +34,27 @@ module.exports = (env) => {
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoEmitOnErrorsPlugin(),
       new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        'process.env.NODE_ENV': JSON.stringify('production')
       }),
-      new UglifyJsPlugin({
-        uglifyOptions:{
-          sourceMap: true,
-          output: {
-            comments: false, // remove comments
-          },
-          // compress: {
-          //   unused: true,
-          //   dead_code: true, // big one--strip code that will never execute
-          //   warnings: false, // good for prod apps so users can't peek behind curtain
-          //   drop_debugger: true,
-          //   conditionals: true,
-          //   evaluate: true,
-          //   drop_console: true, // strips console statements
-          //   sequences: true,
-          //   booleans: true,
-          // }
-        },
-      }),
+      // new UglifyJsPlugin({
+      //   uglifyOptions:{
+      //     sourceMap: true,
+      //     output: {
+      //       comments: false, // remove comments
+      //     },
+      //     compress: {
+      //       unused: true,
+      //       dead_code: true, // big one--strip code that will never execute
+      //       warnings: false, // good for prod apps so users can't peek behind curtain
+      //       drop_debugger: true,
+      //       conditionals: true,
+      //       evaluate: true,
+      //       drop_console: true, // strips console statements
+      //       sequences: true,
+      //       booleans: true,
+      //     }
+      //   },
+      // }),
       // new CompressionPlugin()
     ],
     context: __dirname,

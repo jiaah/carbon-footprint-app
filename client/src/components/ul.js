@@ -1,5 +1,5 @@
 import React from 'react';
-import LazyLoad from 'react-lazyload';
+// import LazyLoad from 'react-lazyload';
 
 /* -- Import image files -- */
 import '../../assets/svg/facebook.svg';
@@ -21,9 +21,9 @@ const Ul = ({ list, links }) => (
     {
       links && links.map(e => (
         <a key={e.id} className={e.classname} href={e.href} target="_blank" rel="nofollow">
-          <LazyLoad height={200} offset={100} once> 
+          {/* <LazyLoad height={200} offset={100} once>  */}
             <img src={e.src} alt={e.alt} height={e.height} width={e.width} className={e.imgClassname} />
-          </LazyLoad>
+          {/* </LazyLoad> */}
           <span className="icon--text-span white">{e.title}</span>
         </a>
       ))
