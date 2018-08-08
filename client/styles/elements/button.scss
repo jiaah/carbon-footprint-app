@@ -5,10 +5,11 @@
         flex-direction: row;
         justify-content: space-around;
         margin-right: 0;
-        
+    }
+    @include for-m-desktop-up {
+        font-size: 20px;
     }
     @include for-big-desktop-up {
-        font-size: 20px;
         padding-left: 5em;
         padding-right: 5em;
     }

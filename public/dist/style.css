@@ -748,9 +748,11 @@ form {
       flex-direction: row;
       justify-content: space-around;
       margin-right: 0; } }
+  @media (min-width: 1200px) {
+    .form--buttons {
+      font-size: 20px; } }
   @media (min-width: 1480px) {
     .form--buttons {
-      font-size: 20px;
       padding-left: 5em;
       padding-right: 5em; } }
   @media (min-width: 1800px) {
