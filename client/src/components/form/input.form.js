@@ -71,7 +71,7 @@ class InputForm extends Component {
 
       return (
         <div className="flex justify-between pw1 input--container-box">
-          <label className={`pt3 mr2 input--label ${inactiveLabelStyle}`}>Trip {id}</label>
+          <label className={`pt2 mr2 input--label ${inactiveLabelStyle}`}>Trip {id}</label>
           <div className="flex-column-m">
             <input
               className={`form--border input input--text btn--border relative ${inactiveInputStyle}`}

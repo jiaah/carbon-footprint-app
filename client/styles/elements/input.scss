@@ -39,7 +39,7 @@
         padding-left: 1em;
         padding-right: 1em;
     }
-    @include for-desktop-up {
+    @include for-m-desktop-up {
         padding-left: 2em;
         padding-right: 2em;
     }
@@ -56,10 +56,10 @@
 
 .input--text {
     width: 25vw;
-    height: 25px;
-    @include for-big-desktop-up {
-        height: 35px;
-        font-size: 16.5px;
+    height: 20.5px;
+    @include for-m-desktop-up {
+        height: 30px;
+        font-size: 15px;
     }
 }
 

@@ -389,7 +389,7 @@ body {
   background-color: #fcfcfc; }
 
 .bg-lightblue {
-  background-color: #f4f7fc; }
+  background-color: #e7eefa; }
 
 /* ------ FONT COLOR ------ */
 .white {
@@ -817,9 +817,9 @@ form {
 /*-- submit.reset --*/
 .submit-reset--btns {
   font-size: 16px; }
-  @media (min-width: 1480px) {
+  @media (min-width: 1200px) {
     .submit-reset--btns {
-      padding: 0 5.5em;
+      padding-right: 32px;
       font-size: 18px; } }
 
 /*- trip input -*/
@@ -859,7 +859,7 @@ form {
     padding-left: 1em;
     padding-right: 1em; } }
 
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   .input--container-box {
     padding-left: 2em;
     padding-right: 2em; } }
@@ -874,11 +874,11 @@ form {
 
 .input--text {
   width: 25vw;
-  height: 25px; }
-  @media (min-width: 1480px) {
+  height: 20.5px; }
+  @media (min-width: 1200px) {
     .input--text {
-      height: 35px;
-      font-size: 16.5px; } }
+      height: 30px;
+      font-size: 15px; } }
 
 @media (min-width: 1000px) {
   .submit-reset--buttons {
