@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CSSExtract = new ExtractTextPlugin('style.css');
-// const CleanWebpackPlugin = require('clean-webpack-plugin');
 const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000'
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 // const CompressionPlugin = require("compression-webpack-plugin");
@@ -40,14 +39,14 @@ module.exports = (env) => {
       }),
       new webpack.optimize.UglifyJsPlugin({
         uglifyOptions:{
-          minimize: true,
+          warnings: false, // good for prod apps so users can't peek behind curtain
           output: {
             comments: false, // remove comments
+            beautify: false,
           },
           compress: {
             unused: true,
             dead_code: true, // big one--strip code that will never execute
-            warnings: false, // good for prod apps so users can't peek behind curtain
             drop_debugger: true,
             conditionals: true,
             evaluate: true,
