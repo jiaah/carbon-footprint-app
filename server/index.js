@@ -2,9 +2,6 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const webpack = require('webpack');
-// NODE_ENV = process.env.NODE_ENV || "development";
-// console.log('process.env.NODE_ENV: ', NODE_ENV);
-// console.log('process.env.NODE_ENV: ', NODE_ENV);
 // in order to access the underlying object, need to invoke the function
 const config = require('../webpack.config')(process.env.NODE_ENV);
 const compiler = webpack(config);
