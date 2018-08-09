@@ -4,7 +4,7 @@ button {
   border: none;
   margin: 5px;
   cursor: pointer;
-  background-color:rgba(0,0,0,0.0001);
+  background-color: rgb(255, 255, 255);
 }
 
 .button--large {
@@ -28,13 +28,13 @@ button {
   border: 1px solid $grey;
 }
 
-.combined-btns {
-  margin: 0;
-}
-
 .btn--border:hover {
   border: 1px solid $main-blue;
   transition: border 0.2s;
+}
+
+.combined-btns {
+  margin: 0;
 }
 
 .combined-btns--left {

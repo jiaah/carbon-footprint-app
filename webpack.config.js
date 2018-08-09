@@ -4,7 +4,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CSSExtract = new ExtractTextPlugin('style.css');
 const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000'
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 // const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = (env) => {
@@ -37,25 +37,25 @@ module.exports = (env) => {
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
       }),
-      new webpack.optimize.UglifyJsPlugin({
-        uglifyOptions:{
-          warnings: false, // good for prod apps so users can't peek behind curtain
-          output: {
-            comments: false, // remove comments
-            beautify: false,
-          },
-          compress: {
-            unused: true,
-            dead_code: true, // big one--strip code that will never execute
-            drop_debugger: true,
-            conditionals: true,
-            evaluate: true,
-            drop_console: true, // strips console statements
-            sequences: true,
-            booleans: true,
-          }
-        },
-      }),
+      // new webpack.optimize.UglifyJsPlugin({
+      //   uglifyOptions:{
+      //     warnings: false, // good for prod apps so users can't peek behind curtain
+      //     output: {
+      //       comments: false, // remove comments
+      //       beautify: false,
+      //     },
+      //     compress: {
+      //       unused: true,
+      //       dead_code: true, // big one--strip code that will never execute
+      //       drop_debugger: true,
+      //       conditionals: true,
+      //       evaluate: true,
+      //       drop_console: true, // strips console statements
+      //       sequences: true,
+      //       booleans: true,
+      //     }
+      //   },
+      // }),
       // new CompressionPlugin()
     ],
     context: __dirname,

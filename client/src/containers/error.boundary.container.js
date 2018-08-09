@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import LazyLoad from 'react-lazyload';
 
 /* -- Import Images -- */
-import ErrorImg from '../../assets/svg/monkey.svg';
+import ErrorImg from '../../assets/img/monkey.jpeg';
 
 class ErrorBoundary extends Component {
   constructor(props) {
