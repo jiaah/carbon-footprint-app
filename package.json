@@ -8,6 +8,7 @@
     "npm": "6.1.0"
   },
   "scripts": {
+    "build": "rm -rf ./dist/ && NODE_ENV=staging webpack --display-error-details --config webpack.config.js",
     "build:dev": "cross-env NODE_ENV=development webpack -d --config webpack.config.js && babel-watch server/index.js",
     "build:prod": "webpack -p --env production",
     "test": "mocha --compilers js:babel-core/register",
