@@ -5,6 +5,9 @@ public/dist/bundle.js.map
 public/dist/style.css
 public/dist/style.css.map
 
+# Hot update files
+./public/.hot/*
+
 # Logs
 logs
 *.log

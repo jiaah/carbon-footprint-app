@@ -2,17 +2,20 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const webpack = require('webpack');
+// NODE_ENV = process.env.NODE_ENV || "development";
+// console.log('process.env.NODE_ENV: ', NODE_ENV);
+// console.log('process.env.NODE_ENV: ', NODE_ENV);
 // in order to access the underlying object, need to invoke the function
 const config = require('../webpack.config')(process.env.NODE_ENV);
-
-const app = express();
 const compiler = webpack(config);
+const app = express();
 
 const PORT = process.env.PORT || 3000;
 
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
   publicPath: config.output.publicPath,
+  stats: false
 }));
 
 app.use(require('webpack-hot-middleware')(compiler, {

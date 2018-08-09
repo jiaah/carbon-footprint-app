@@ -2,27 +2,31 @@ const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CSSExtract = new ExtractTextPlugin('style.css');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000'
 // const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 // const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = (env) => {
   const isProduction = env === 'production';
   console.log('env: ', env);
-  const CSSExtract = new ExtractTextPlugin('style.css');
-  
-  const API = isProduction ? 'https://carbon-footprint.herokuapp.com' : 'http://localhost:3000';
+  console.log('isProduction: ', isProduction);
 
   return {
     entry: [
-      `webpack-hot-middleware/client?path=${API}/__webpack_hmr&reload=true`,
+      hotMiddlewareScript,
       path.join(__dirname, '/client/index.js'),
     ],
     output: {
       path: path.resolve(__dirname, 'public/dist'),
       filename: 'bundle.js',
       publicPath: '/',
+      hotUpdateChunkFilename: '.hot/[id].[hash].hot-update.js',
+      hotUpdateMainFilename: '.hot/[hash].hot-update.json'
     },
     plugins: [
+      new CleanWebpackPlugin(['dist']),
       new HTMLWebpackPlugin({
         template: './public/index.html',
         inject: 'body',
