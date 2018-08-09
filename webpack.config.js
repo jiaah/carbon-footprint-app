@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CSSExtract = new ExtractTextPlugin('style.css');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
 const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000'
 // const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 // const CompressionPlugin = require("compression-webpack-plugin");
@@ -24,7 +24,7 @@ module.exports = (env) => {
       hotUpdateMainFilename: '.hot/[hash].hot-update.json'
     },
     plugins: [
-      new CleanWebpackPlugin('dist'),
+      // new CleanWebpackPlugin('dist'),
       new HTMLWebpackPlugin({
         template: './public/index.html',
         inject: 'body',
