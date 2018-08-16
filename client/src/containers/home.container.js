@@ -17,9 +17,9 @@ const HomeContainer = ({ resultLoading }) => {
   return (
     <div>
       <Nav />
-      <ErrorBoundary>
+      {/* <ErrorBoundary> */}
         <FlightCalculatorContainer />
-      </ErrorBoundary>
+      {/* </ErrorBoundary> */}
       <Footer
         link="© 2017 - all rights reserved"
       />

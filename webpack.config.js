@@ -2,61 +2,65 @@ const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 const CSSExtract = new ExtractTextPlugin('style.css');
-const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000'
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-// const CompressionPlugin = require("compression-webpack-plugin");
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
-module.exports = (env) => {
-  const isProduction = env === 'production';
+const isProduction = process.env.NODE_ENV === 'production';
 
-  return {
+module.exports = {
     entry: [
-      hotMiddlewareScript,
+      // 'webpack-hot-middleware/client?__webpack_hmr&timeout=20000',
       path.join(__dirname, 'client/index.js'),
     ],
     output: {
       path: path.resolve(__dirname, 'public/dist'),
       filename: 'bundle.js',
       publicPath: '/',
-      hotUpdateChunkFilename: '.hot/[id].[hash].hot-update.js',
-      hotUpdateMainFilename: '.hot/[hash].hot-update.json'
     },
     plugins: [
-      // new CleanWebpackPlugin('dist'),
       new HTMLWebpackPlugin({
         template: './public/index.html',
-        inject: 'body',
-        filename: 'index.html',
-        hash: true,
-        favicon: './public/favicon.ico',
+        // inject: 'body',
+        // filename: 'index.html',
+        // hash: true,
+        // favicon: './public/favicon.ico',
       }),
       CSSExtract,
-      new webpack.HotModuleReplacementPlugin(),
+      // new webpack.HotModuleReplacementPlugin(),
       new webpack.NoEmitOnErrorsPlugin(),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
       }),
-      // new webpack.optimize.UglifyJsPlugin({
-      //   uglifyOptions:{
-      //     warnings: false, // good for prod apps so users can't peek behind curtain
-      //     output: {
-      //       comments: false, // remove comments
-      //       beautify: false,
-      //     },
-      //     compress: {
-      //       unused: true,
-      //       dead_code: true, // big one--strip code that will never execute
-      //       drop_debugger: true,
-      //       conditionals: true,
-      //       evaluate: true,
-      //       drop_console: true, // strips console statements
-      //       sequences: true,
-      //       booleans: true,
-      //     }
-      //   },
-      // }),
-      // new CompressionPlugin()
+      new UglifyJSPlugin({
+        test: /\.js($|\?)/i,
+        sourceMap: true,
+        cache: true,
+        parallel: true,
+        uglifyOptions: {
+          mangle: true,
+          ecma: 8,
+          warnings: false,
+          ie8: true,
+          safari10: true,
+          output: {
+            comments: false,
+          },
+          compress: {
+            dead_code: true,
+          },
+        },
+      }),
+      new OptimizeCssAssetsPlugin({
+        assetNameRegExp: /\.optimize\.css$/g,
+        cssProcessor: cssnano,
+        cssProcessorOptions: {
+          discardComments: { removeAll: true }
+        },
+        canPrint: true
+      })
     ],
     context: __dirname,
     devtool: isProduction ? 'source-map' : 'inline-source-map',
@@ -70,21 +74,23 @@ module.exports = (env) => {
           // SCSS + CSS
           test: /\.s?css$/,
           use: CSSExtract.extract({
+            fallback: 'style-loader',
             use: [
-              {
+              { 
                 loader: 'css-loader',
-                options: {
-                  sourceMap: true,
-                  minimize: true
-                },
+                options: {minimize: true}
               },
               {
-                loader: 'sass-loader',
+                loader: 'postcss-loader',
                 options: {
-                  sourceMap: true,
-                  minimize: true
+                  plugins: [
+                    autoprefixer({
+                      browsers: 'last 2 versions',
+                    }),
+                  ]
                 },
               },
+              { loader: 'sass-loader' },
             ],
           }),
         },
@@ -92,12 +98,7 @@ module.exports = (env) => {
           test: /\.js$/,
           exclude: /(node_modules|bower_components)/,
           use: [
-            {
-              loader: 'babel-loader',
-              options: {
-                presets: ['es2015', 'react', 'stage-2', 'react-hmre'],
-              },
-            },
+            { loader: 'babel-loader' },
           ],
         },
         {
@@ -117,6 +118,5 @@ module.exports = (env) => {
           },
         },
       ],
-    },
-  };
+    }
 };
